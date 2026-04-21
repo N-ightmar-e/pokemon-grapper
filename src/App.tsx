@@ -5,6 +5,7 @@ import { CandidateList } from './components/CandidateList';
 import { Gallery } from './components/Gallery';
 import { StatusMessage } from './components/StatusMessage';
 import { Footer } from './components/Footer';
+import { Disclaimer } from './components/Disclaimer';
 
 export default function App() {
   const state = useAppStore((s) => s.state);
@@ -18,6 +19,8 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-6 px-4 py-8 sm:px-6">
+        <Disclaimer />
+
         <header className="flex flex-col items-center gap-2 text-center">
           <div className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-sky-400">
             <Sparkles size={14} /> Pokémon Fandom Sprite Grabber

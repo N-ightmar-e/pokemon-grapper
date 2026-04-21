@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/pokemon-grapper/',
+  base: process.env.DEPLOY_BASE ?? '/pokemon-grapper/',
   plugins: [react(), tailwindcss()],
 })

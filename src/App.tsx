@@ -5,7 +5,7 @@ import { CandidateList } from './components/CandidateList';
 import { Gallery } from './components/Gallery';
 import { StatusMessage } from './components/StatusMessage';
 import { Footer } from './components/Footer';
-import { Disclaimer } from './components/Disclaimer';
+import { NpcNotice } from './components/NpcNotice';
 
 export default function App() {
   const state = useAppStore((s) => s.state);
@@ -19,8 +19,6 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-6 px-4 py-8 sm:px-6">
-        <Disclaimer />
-
         <header className="flex flex-col items-center gap-2 text-center">
           <div className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-sky-400">
             <Sparkles size={14} /> Pokémon Fandom Sprite Grabber
@@ -59,12 +57,17 @@ export default function App() {
 
         <main className="flex flex-1 flex-col items-center gap-6">
           {state.kind === 'idle' && (
-            <div className="mt-8 max-w-md text-center text-sm text-slate-500">
-              예시: <span className="text-slate-300">피카츄</span> ·{' '}
-              <span className="text-slate-300">이상해씨</span> ·{' '}
-              <span className="text-slate-300">리자몽</span> ·{' '}
-              <span className="text-slate-300">이브이</span>
-            </div>
+            <>
+              <div className="mt-2 max-w-md text-center text-sm text-slate-500">
+                예시: <span className="text-slate-300">피카츄</span> ·{' '}
+                <span className="text-slate-300">이상해씨</span> ·{' '}
+                <span className="text-slate-300">리자몽</span> ·{' '}
+                <span className="text-slate-300">이브이</span>
+              </div>
+              <div className="mt-6 w-full pb-4">
+                <NpcNotice />
+              </div>
+            </>
           )}
 
           {state.kind === 'searching' && (
